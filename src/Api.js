@@ -1,12 +1,10 @@
 import axios from 'axios';
 
-async function getProductos() {
+async function getProductos(search = '') {
     try {
-        const response = await axios('http://localhost:5000/products', { method: 'GET' });
-        const products = response.data.products;
-        return products;
+        const response = await axios(`http://localhost:7000/products/${search}`, { method: 'GET' });
+        return response.data;
     } catch (error) {
-        console.log("ERROR", error);
         throw new Error(error);
     }
 }
