@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import './App.css';
-import getProductos from './Api.js';
+import getProductos from '../Helpers/Api.js';
 
 function App() {
   let [search, setSearch] = useState('');
